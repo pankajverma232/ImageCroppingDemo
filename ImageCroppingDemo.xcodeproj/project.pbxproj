@@ -12,6 +12,9 @@
 		D9753F111C719BD6009442A4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9753F0F1C719BD6009442A4 /* Main.storyboard */; };
 		D9753F131C719BD6009442A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9753F121C719BD6009442A4 /* Assets.xcassets */; };
 		D9753F161C719BD6009442A4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9753F141C719BD6009442A4 /* LaunchScreen.storyboard */; };
+		D9753F1E1C719C35009442A4 /* puppy.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D9753F1D1C719C35009442A4 /* puppy.jpg */; };
+		D979DC091C71F81D006C4F81 /* CroppedImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D979DC071C71F81D006C4F81 /* CroppedImageViewController.swift */; };
+		D979DC0A1C71F81D006C4F81 /* CroppedImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D979DC081C71F81D006C4F81 /* CroppedImageViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		D9753F121C719BD6009442A4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D9753F151C719BD6009442A4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D9753F171C719BD6009442A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D9753F1D1C719C35009442A4 /* puppy.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = puppy.jpg; sourceTree = "<group>"; };
+		D979DC071C71F81D006C4F81 /* CroppedImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CroppedImageViewController.swift; sourceTree = "<group>"; };
+		D979DC081C71F81D006C4F81 /* CroppedImageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CroppedImageViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,10 +62,13 @@
 			children = (
 				D9753F0B1C719BD6009442A4 /* AppDelegate.swift */,
 				D9753F0D1C719BD6009442A4 /* ViewController.swift */,
+				D979DC071C71F81D006C4F81 /* CroppedImageViewController.swift */,
+				D979DC081C71F81D006C4F81 /* CroppedImageViewController.xib */,
 				D9753F0F1C719BD6009442A4 /* Main.storyboard */,
 				D9753F121C719BD6009442A4 /* Assets.xcassets */,
 				D9753F141C719BD6009442A4 /* LaunchScreen.storyboard */,
 				D9753F171C719BD6009442A4 /* Info.plist */,
+				D9753F1D1C719C35009442A4 /* puppy.jpg */,
 			);
 			path = ImageCroppingDemo;
 			sourceTree = "<group>";
@@ -124,7 +133,9 @@
 			files = (
 				D9753F161C719BD6009442A4 /* LaunchScreen.storyboard in Resources */,
 				D9753F131C719BD6009442A4 /* Assets.xcassets in Resources */,
+				D9753F1E1C719C35009442A4 /* puppy.jpg in Resources */,
 				D9753F111C719BD6009442A4 /* Main.storyboard in Resources */,
+				D979DC0A1C71F81D006C4F81 /* CroppedImageViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,6 +148,7 @@
 			files = (
 				D9753F0E1C719BD6009442A4 /* ViewController.swift in Sources */,
 				D9753F0C1C719BD6009442A4 /* AppDelegate.swift in Sources */,
+				D979DC091C71F81D006C4F81 /* CroppedImageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,6 +296,7 @@
 				D9753F1C1C719BD6009442A4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

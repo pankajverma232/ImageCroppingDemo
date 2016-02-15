@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="adK-kX-IS0">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ImageCroppingDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +17,81 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="puppy.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="XUj-xB-Wbq">
+                                <rect key="frame" x="20" y="20" width="560" height="580"/>
+                            </imageView>
+                            <view alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EHE-Z6-t5Q">
+                                <rect key="frame" x="20" y="380" width="560" height="200"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="dux-Be-2aj"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="sOd-0d-Jme" appends="YES" id="QRK-dX-lPd"/>
+                                </connections>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pH4-uD-bva">
+                                <rect key="frame" x="283" y="570" width="34" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Crop">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="cropImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rjC-pR-FEh"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="pH4-uD-bva" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="68X-qI-E19"/>
+                            <constraint firstItem="EHE-Z6-t5Q" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="8xC-l8-4XU"/>
+                            <constraint firstItem="XUj-xB-Wbq" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="GXg-aW-6OD"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="XUj-xB-Wbq" secondAttribute="trailing" id="Y4a-jM-s32"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="XUj-xB-Wbq" secondAttribute="bottom" id="YRC-HR-Lry"/>
+                            <constraint firstItem="XUj-xB-Wbq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="hWI-Vw-TIs"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="EHE-Z6-t5Q" secondAttribute="bottom" constant="20" id="kbj-Nx-taQ"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="pH4-uD-bva" secondAttribute="bottom" id="nqN-FG-Lam"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="EHE-Z6-t5Q" secondAttribute="trailing" id="p48-DR-UQO"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="83z-OQ-3kT"/>
+                    <connections>
+                        <outlet property="cropArea" destination="EHE-Z6-t5Q" id="a63-jK-L3a"/>
+                        <outlet property="imageView" destination="XUj-xB-Wbq" id="tpF-zV-MbE"/>
+                        <outlet property="recognizer" destination="sOd-0d-Jme" id="bhH-8b-lPe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="sOd-0d-Jme">
+                    <connections>
+                        <action selector="handlePan:" destination="BYZ-38-t0r" id="SPW-pN-yz5"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="1151" y="349"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="tPR-pC-HOg">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="adK-kX-IS0" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Y0E-fz-1nJ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Jqg-3B-Gfb"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wHw-0L-mIK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="339" y="349"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="puppy.jpg" width="500" height="350"/>
+    </resources>
 </document>
